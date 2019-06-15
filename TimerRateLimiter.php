@@ -49,7 +49,7 @@ class TimerRateLimiter
         }
 
         //请求成功后记录每一次行为（score是行为发生的时间）
-        $this->redis->zAdd($this->limit_key,$now_ts,$now_ts);//删除60秒之前的行为
+        $this->redis->zAdd($this->limit_key,$now_ts,$now_ts);
 
         return false;
     }
